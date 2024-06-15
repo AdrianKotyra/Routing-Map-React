@@ -7,7 +7,7 @@ import PageNav from "../components/PageNav"
 function AppLAyout(){
     return (
         <>
-          <PageNav/>
+       
             <div className={styles.app}>
             
                 <Sitebar/>
