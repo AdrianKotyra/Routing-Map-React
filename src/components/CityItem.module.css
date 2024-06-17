@@ -34,7 +34,9 @@
 .date {
   font-size: 1.5rem;
 }
-
+ul {
+  display: block;
+}
 .deleteBtn {
   height: 2rem;
   aspect-ratio: 1;
