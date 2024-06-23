@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import Product from "./pages/product";
 import Pricing from "./pages/pricing";
@@ -26,7 +27,7 @@ export default function App(){
         setCities(data)  
       } 
       catch {
-        alert("there was an error loading data")
+        console.log("there was an error loading data")
       }
 
       finally {
@@ -46,7 +47,7 @@ export default function App(){
         <Route path="product" element={<Product/>} />
         <Route path="pricing" element={<Pricing/>} />
         <Route path="app" element={<AppLayout/>}>
-          <Route index path="cities" element={<CityList cities={cities} isLoading={isLoading}/>} />
+          <Route index element={<Navigate replace = "cities"/>} />
           <Route path="cities" element={<CityList cities={cities}  isLoading={isLoading}/> } />
           <Route path="cities/:id" element={<City/>} />
 
