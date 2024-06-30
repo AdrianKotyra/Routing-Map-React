@@ -4,10 +4,11 @@ import Spinner from "./Spinner"
 
 import Message from "./Message"
 import CountryItem from "./CountryItem";
+import { useCities } from "../context/CitiesContext";
 
-function CountriesList({cities, isLoading}){
+function CountriesList(){
 
-   
+    const {cities, isLoading} = useCities()
   
     if(isLoading) return <Spinner/>;
     if(!cities.length) return <Message message="Add your first city by clicking on the city map"/>
